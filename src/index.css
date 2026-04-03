@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ocean-dark text-white font-sans antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-white
+           bg-gradient-to-r from-water-600 to-teal-500
+           hover:from-water-500 hover:to-teal-400
+           transform hover:scale-105 transition-all duration-300
+           shadow-glow-blue hover:shadow-glow-teal;
+  }
+
+  /* Outline button */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold
+           border-2 border-water-400 text-water-400
+           hover:bg-water-400 hover:text-ocean-dark
+           transform hover:scale-105 transition-all duration-300;
+  }
+
+  /* Section heading */
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-white mb-6;
+  }
+
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-lg text-blue-200/70 max-w-2xl mx-auto;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-water-400 to-teal-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a192f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1284f5;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2aa4ff;
+  }
+}
